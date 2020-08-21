@@ -32,7 +32,7 @@
 		<!--  -->
 		<div class="size1 flex-col-c-m p-l-15 p-r-15 p-t-50 p-b-50">
 			<h3 class="l1-txt1 txt-center p-b-25">
-				Coming Soon - Docker Demo
+				Coming Soon - Docker Demo 2
 			</h3>
 
 			<p class="m2-txt1 txt-center p-b-48">
