@@ -1,5 +1,7 @@
 # Docker
-Docker concepts and application deployment
+Docker basic concepts and application deployment for beginners
+
+## Dockerfile
 
 This is basic steps for beginners to learn docker
 
@@ -12,6 +14,47 @@ This is basic steps for beginners to learn docker
     
 5. Run command in terminal to run the docker image
 
-		  docker run -p 80:80 app_name
+        docker run -p 80:80 app_name
 
 Hurray! Your first docker is up and running check your localhost.
+
+## Docker-compose
+
+(Refer ecommerce-docker-compose)
+
+create a docker-compose.yml file into the root directory (sample below)
+	
+	version: '3'
+
+	services:
+  	  product-service:
+    	    build: ./products
+    	    volumes:
+      	      - ./products:/usr/src/app
+    	    ports:
+      	      - 3001:80
+
+  	website:
+    	  image: php:apache
+    	  volumes:
+      	    - ./website:/var/wwww/html
+    	  ports:
+      	    - 4001:80
+    	  depends_on:
+      	    - product-service'
+
+Run the command in the terminal to launch the docker container instance
+	
+       docker-compose up
+
+Run the command in the terminal to see the docker container instances running
+
+       docker ps
+       
+Run the command in the terminal to run the docker container in background detach mode
+
+       docker-compose up -d     
+       
+Run the command in the terminal to take down or stop the docker container instance
+
+       docker-compose stop         
